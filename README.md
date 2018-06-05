@@ -1,2 +1,2 @@
 # hyf-html-css
-My repository for HYF
+This repo with my homework hosted via Github :octocat:
