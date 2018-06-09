@@ -22,6 +22,6 @@ favicon.png - icon
 
 - [CSS autoprefixer](https://github.com/autoprefixer/autoprefixer.github.io/)
 
-- [CSSO (CSS Optimizer)] (https://github.com/css/csso)
+- [CSSO (CSS Optimizer)(https://github.com/css/csso)
 
 
