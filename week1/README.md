@@ -1,10 +1,13 @@
-Structure:
+#Resume [Live Version] (https://acimanx.github.io/hyf-html-css/week1)
+This is my homework for week1 in hyf school
+
+##Structure:
 
 index.html - main html document
 
 favicon.png - icon
 
-
+```
 --css/ - stylesheets
 
 ----style.css - readable css file with comments
@@ -13,3 +16,12 @@ favicon.png - icon
 
 
 --img/ - images
+```
+
+#External tools that was used:
+
+- [CSS autoprefixer](https://github.com/autoprefixer/autoprefixer.github.io/)
+
+- [CSSO (CSS Optimizer)] (https://github.com/css/csso)
+
+
