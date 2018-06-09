@@ -1,0 +1,1363 @@
+a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,caption,center,cite,code,dd,del,details,dfn,div,dl,dt,em,embed,fieldset,figcaption,figure,footer,form,h1,h2,h3,h4,h5,h6,header,hgroup,html,i,iframe,img,ins,kbd,label,legend,li,main,mark,menu,nav,object,ol,output,p,pre,q,ruby,s,samp,section,small,span,strike,strong,sub,summary,sup,table,tbody,td,tfoot,th,thead,time,tr,tt,u,ul,var,video{margin:0;padding:0;border:0;font:inherit;vertical-align:baseline}article,aside,details,figcaption,figure,footer,header,hgroup,main,menu,nav,section{display:block}[hidden]{display:none}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:after,blockquote:before,q:after,q:before{content:'';content:none}table{border-collapse:collapse;border-spacing:0}
+/* Minified reset.css*/
+/* Original: https://github.com/shannonmoeller/reset-css*/
+
+/* General Rules
+------------------------------------------------------------------------------------------------------------
+*/
+html, body {
+font: 100% 'VT323',monospace;
+width: 100%;
+/* Doubled for a fallback in a case */
+width: calc(100vw - (100vw - 100%));
+/* 100% without scrollbar */
+height: 100%;
+height: calc(100vh - (100vh - 100%));
+}
+h1 {
+font-size: 1.9vw;
+/* 1.5% of viewport width */
+}
+h2 {
+font-size: 1vw;
+/* 1% of viewport width */
+}
+i {
+position: absolute;
+top: 0;
+left: 0;
+opacity: 0;
+}
+a {
+text-decoration-color:#FFF;
+}
+
+/* Grids & Cells
+------------------------------------------------------------------------------------------------------------
+*/
+
+.grid-one, .grid-two {
+display: grid;
+/* Almost as table, but fancier */
+width: 100%;
+height: 100%;
+grid-template-columns: repeat(16,1fr);
+/* Makes 16 columns with every of 1 FRactional unit width (1fr = 1 part of the available space)*/
+grid-template-rows: repeat(9,1fr) ;
+}
+.cell {
+font-size: .8vw;
+position: relative;
+/* I need relative parent for a positioning of absolute children */
+display: flex;
+/* Yay, week1 homework! */
+min-width: 9vmin;
+/* Trick that works for devices with a small width */
+transition: background 1s;
+/* Animation for square cells */
+border: 1px solid #f3f3f3;
+align-items: center;
+justify-content: center;
+}
+.high-gravity {
+align-items: flex-end;
+justify-content: flex-end;
+}
+.antigravity {
+align-items: flex-start;
+}
+.left-magnet {
+justify-content: flex-start;
+}
+.right-magnet {
+justify-content: flex-end;
+}
+.cell:hover {
+transition-timing-function: ease;
+background: #000;
+}
+
+
+/* Custom cells
+------------------------------------------------------------------------------------------------------------
+*/
+
+.this-is-my-name {
+color: #fff;
+border-bottom: 4px solid;
+background: #313131;
+grid-column: 2 / span 3;
+/* Position in a grid: started in a 2nd column and 4 columns wide */
+grid-row: 2;
+/* Position in a grid: 2nd row */
+}
+.who-am-i {
+color: #fff;
+background: #313131;
+grid-column: 2 / span 4;
+grid-row: 3;
+align-items: flex-end;
+}
+.who-am-i h2 {
+font-size: 1.3vw;
+position: absolute;
+z-index: 3;
+margin: 0 auto;
+align-self: center;
+}
+.what-i-do-now {
+text-align: right;
+color: #fff;
+background: #313131;
+grid-column: 3 / span 2;
+grid-row: 5;
+}
+.what-i-do-now h1 {
+font-size: 1.3vw;
+z-index: 3;
+}
+.where-i-do {
+position: relative;
+color: #fff;
+background: #313131;
+grid-column: 6 / span 2;
+grid-row: 5;
+}
+.where-i-do h1 {
+z-index: 3;
+width: 100%;
+height: 35%;
+margin: 0 auto;
+border-top: 2px solid #484848;
+}
+.education {
+text-align: right;
+color: #fff;
+background: #313131;
+grid-column: 2 / span 2;
+grid-row: 7;
+}
+.work-experience {
+text-align: center;
+color: #fff;
+border-top: 2px solid #fff;
+background: #313131;
+grid-column: 2 / span 2;
+grid-row: 1;
+align-items: flex-end;
+}
+.work-experience h2 {
+position: absolute;
+align-self: center;
+}
+.first-education {
+text-align: right;
+color: #fff;
+background: #313131;
+grid-column: 5 / span 2;
+grid-row: 7;
+}
+.second-education {
+text-align: right;
+color: #fff;
+border-top: 2px solid #fff;
+background: #313131;
+grid-column: 5 / span 2;
+grid-row: 8;
+}
+.first-work {
+text-align: right;
+color: #fff;
+border-top: 2px solid #fff;
+background: #313131;
+grid-column: 5 / span 2;
+grid-row: 1;
+}
+.second-work {
+text-align: right;
+color: #fff;
+border-top: 2px solid #fff;
+background: #313131;
+grid-column: 5 / span 2;
+grid-row: 2;
+}
+.second-work h2 {
+z-index: 2;
+}
+.water-office {
+border-bottom: 2px solid #fff;
+background: #464646;
+grid-column: 11;
+grid-row: 3;
+align-items: flex-end;
+}
+.github-left {
+color: #fff;
+background: #313131;
+grid-column: 11;
+grid-row: 2;
+}
+.github-left h2 {
+width: 100%;
+margin: 0 auto;
+text-align: center;
+}
+a .github-right {
+text-decoration: none;
+}
+.github-right {
+position: relative;
+color: #fff;
+border-left: 4px solid #fff;
+background: #313131;
+grid-column: 12;
+grid-row: 2 / span 2;
+}
+.github-right h2 {
+z-index: 2;
+margin: 0 auto;
+text-align: center;
+border: 8px #fff double;
+}
+.github-right img {
+width: 100%;
+height: 50%;
+image-rendering: pixelated;
+/* Denies ugly rendering for pixel-art*/
+}
+.codepen-left {
+color: #fff;
+background: #313131;
+grid-column: 14;
+grid-row: 2;
+}
+.codepen-left h2 {
+width: 100%;
+margin: 0 auto;
+text-align: center;
+}
+.blackmesa-office {
+background: #464646;
+grid-column: 14;
+grid-row: 3;
+align-items: flex-end;
+}
+.room-small {
+width: 20%;
+height: 50%;
+background: red;
+}
+.codepen-right {
+color: #fff;
+background: #313131;
+grid-column: 15;
+grid-row: 2 / span 2;
+}
+.codepen-right h2 {
+z-index: 2;
+margin: 0 auto;
+text-align: center;
+border: 8px #fff double;
+}
+.codepen-right img {
+width: 100%;
+height: 50%;
+image-rendering: pixelated;
+}
+.projects {
+text-align: right;
+color: #fff;
+border-top: 2px solid #fff;
+background: #313131;
+grid-column: 9 / span 4;
+grid-row: 5;
+align-items: flex-end;
+}
+.projects h1 {
+position: absolute;
+align-self: center;
+}
+.projects-general {
+text-align: right;
+color: #fff;
+background: #313131;
+grid-column: 12 / span 3;
+grid-row: 7 / span 2;
+}
+.projects-general h2 {
+font-size: 2vw;
+text-align: center;
+}
+.projects-general p {
+width: 100%;
+height: 80%;
+text-align: center;
+border: 2px solid #fff;
+}
+.fuckt {
+font-size: .5vw;
+opacity: .1;
+}
+.fuckt:hover {
+font-size: .6vw;
+overflow: hidden;
+opacity: 1;
+color: #fff;
+}
+.copyright {
+color: #fff;
+border: 10px double #fff;
+background: #313131;
+}
+.copyright p {
+font-size: .6vw;
+margin: 0 auto;
+text-align: center;
+color: #5a5a5a;
+}
+.garden {
+border-right: 5px solid #000;
+background: #1d1d1d;
+grid-column: 12 / span 3;
+grid-row: 7 / span 1;
+align-items: flex-end;
+}
+.powerplant {
+background: #3c3c3c;
+grid-column: 4 / span 3;
+grid-row: 6 / span 1;
+}
+.generator {
+position: absolute;
+z-index: 2;
+left: 17%;
+width: 20%;
+height: 8%;
+transform: rotate(30deg);
+animation: rotating 5s infinite linear normal;
+background: #fff;
+}
+.generator:hover {
+background: yellow;
+}
+.message {
+text-align: center;
+color: #fff;
+border-left: 2px solid #fff;
+background: #464646;
+grid-column: 9 / span 3;
+grid-row: 7;
+}
+.main-office {
+color: #fff;
+border-bottom: 4px solid;
+border-left: 2px solid #fff;
+background: #464646;
+grid-column: 5;
+grid-row: 2;
+}
+.main-office img {
+z-index: 1;
+width: 50%;
+height: 50%;
+border: 6px double #fff;
+image-rendering: pixelated;
+}
+.into-the-void {
+transform: rotate(0deg);
+animation: earthquake 3s infinite linear;
+/* Shake this cell, baby!*/
+background: #000;
+}
+.sewers {
+color: #fff;
+border: 4px double #464646;
+background: #232323;
+grid-column: 3 / span 4;
+grid-row: 7;
+}
+.water-sewers {
+position: absolute;
+z-index: 2;
+right: 0;
+bottom: 0;
+width: 100%;
+height: 30%;
+animation: sewersflow 10s infinite linear alternate;
+opacity: .9;
+background: #44a6c6;
+}
+.pipe-sewers {
+position: absolute;
+z-index: 1;
+bottom: 18%;
+left: 3%;
+width: 10%;
+height: 40%;
+background: #000;
+}
+.creep {
+position: absolute;
+z-index: 1;
+bottom: 1px;
+left: 25%;
+width: 45%;
+height: 80%;
+animation: creepmove 20s infinite linear alternate;
+opacity: 1;
+background: #152317;
+}
+
+/* Tunnels
+------------------------------------------------------------------------------------------------------------
+*/
+
+.wire.horizontal {
+position: relative;
+width: 100%;
+height: 25%;
+background: #000;
+}
+.wire.horizontal.center {
+position: relative;
+width: 100%;
+height: 25%;
+background: #000;
+}
+.wire.right-exit {
+position: absolute;
+z-index: 1;
+right: 0;
+width: 37%;
+height: 25%;
+background: #000;
+}
+.wire.vertical {
+position: relative;
+width: 25%;
+height: 100%;
+background: #000;
+}
+.wire {
+transition: background 1s;
+}
+.wire:hover {
+transition-timing-function: ease;
+background: #fff;
+}
+.pipe-horizontal {
+position: relative;
+width: 100%;
+height: 25%;
+background: #c3c3c3;
+}
+
+/* Lifts & Machines
+------------------------------------------------------------------------------------------------------------
+*/
+
+.main-lift {
+position: absolute;
+z-index: 3;
+width: 20%;
+height: 20%;
+margin: 0 auto;
+animation: main-lift-animation 30s infinite linear alternate;
+/* The ride is too deep undeground*/
+opacity: .9;
+background: #fff;
+}
+.experience-lift {
+position: absolute;
+z-index: 3;
+left: 0;
+width: 100%;
+height: 5%;
+animation: experience-lift-animation 15s infinite linear alternate;
+/* It just moves boxes, you know*/
+opacity: .9;
+background: #fff;
+}
+.experience-lift::before {
+/* This is actually a box, just didn't want to make an extra div*/
+position: absolute;
+left: 25%;
+width: 50%;
+height: 220%;
+content: '';
+animation: experience-lift-animation-box 30s infinite linear;
+opacity: 1;
+background: #fff;
+}
+.lift-stuck {
+position: absolute;
+z-index: 3;
+width: 20%;
+height: 20%;
+margin: 0 auto;
+animation: lift-stuck-animation 5s infinite linear alternate;
+opacity: .5;
+background: #fff;
+}
+.car-with-lights {
+position: absolute;
+z-index: 2;
+bottom: 0;
+width: 30%;
+height: 150%;
+animation: car-moves-and-sparks 3s infinite ease-in-out alternate;
+border-bottom: 5px solid #fff;
+background: #fff0;
+}
+.work-void {
+position: absolute;
+bottom: 20px;
+left: 0;
+width: 50px;
+height: 15px;
+content: '';
+animation: work-in-process 3s infinite linear;
+/* BOOM*/
+background: #fff;
+}
+.pult-magnet {
+position: absolute;
+z-index: 3;
+top: 0;
+width: 25%;
+height: 4%;
+animation: magnetism 20s infinite ease-in-out normal;
+opacity: .8;
+background: #fff;
+}
+.pult-magnet::before {
+position: absolute;
+top: 210%;
+left: 40%;
+width: 27%;
+height: 330%;
+content: '';
+animation: magnetism-box 20s infinite ease-in-out normal;
+background: #eaeaea;
+}
+.pusher {
+position: absolute;
+z-index: 2;
+top: 2%;
+left: 0;
+width: 0;
+height: 20%;
+animation: push-it 10s infinite linear normal;
+border-right: 6px solid #6d6d6d;
+background: #c3c3c3;
+}
+
+/* People
+------------------------------------------------------------------------------------------------------------
+*/
+
+.passengers-first-floor {
+position: absolute;
+z-index: 4;
+bottom: 1px;
+width: 4px;
+height: 8px;
+animation: passengers-first-animation 30s infinite linear alternate;
+opacity: .9;
+background: #fff;
+}
+.passengers-first-floor::before {
+/* Just a trick to make it look like it's 2 persons*/
+position: absolute;
+left: 9px;
+width: 4px;
+height: 8px;
+content: '';
+opacity: .9;
+background: #fff;
+}
+.passengers-second-floor {
+position: absolute;
+z-index: 4;
+bottom: 1px;
+width: 4px;
+height: 8px;
+animation: passengers-second-animation 30s infinite linear alternate;
+/* Really angry animation*/
+opacity: .9;
+background: #fff;
+}
+.main-office-director {
+position: absolute;
+z-index: 2;
+bottom: 1px;
+width: 4px;
+height: 8px;
+animation: walking-director 30s infinite linear alternate;
+background: #fff;
+}
+.water-office-director {
+position: absolute;
+z-index: 2;
+bottom: 1%;
+width: 4px;
+height: 8px;
+animation: walking-director 30s infinite linear alternate;
+background: #fff;
+}
+.robot-a {
+position: absolute;
+z-index: 2;
+bottom: 1px;
+width: 4px;
+height: 8px;
+animation: walking-right-a 30s infinite linear alternate;
+opacity: .9;
+background: #fff;
+}
+.robot-b {
+position: absolute;
+z-index: 2;
+bottom: 1px;
+width: 4px;
+height: 8px;
+animation: walking-right-b 29s infinite linear alternate;
+opacity: .9;
+background: #fff;
+}
+.robot-c {
+position: absolute;
+z-index: 2;
+bottom: 1px;
+width: 4px;
+height: 8px;
+animation: walking-right-c 30s infinite linear alternate;
+opacity: .9;
+background: #fff;
+}
+.robot-d {
+position: absolute;
+z-index: 2;
+bottom: 1px;
+width: 4px;
+height: 8px;
+animation: walking-right-d 28s infinite linear alternate;
+opacity: .9;
+background: #fff;
+}
+.robot-e {
+position: absolute;
+z-index: 2;
+bottom: 1px;
+width: 4px;
+height: 8px;
+animation: walking-left-a 30s infinite linear alternate;
+opacity: .9;
+background: #fff;
+}
+.robot-f {
+position: absolute;
+z-index: 2;
+bottom: 1px;
+width: 4px;
+height: 8px;
+animation: walking-left-b 29s infinite linear alternate;
+opacity: .9;
+background: #fff;
+}
+.robot-g {
+position: absolute;
+z-index: 2;
+bottom: 1px;
+width: 4px;
+height: 8px;
+animation: walking-left-c 30s infinite linear alternate;
+opacity: .9;
+background: #fff;
+}
+.robot-h {
+position: absolute;
+z-index: 2;
+bottom: 1px;
+width: 4px;
+height: 8px;
+animation: walking-left-d 28s infinite linear alternate;
+opacity: .9;
+background: #fff;
+}
+.robot-i {
+position: absolute;
+z-index: 2;
+z-index: 1;
+bottom: 1px;
+width: 4px;
+height: 8px;
+animation: magnet-worker 28s infinite linear alternate;
+opacity: .9;
+background: #fff;
+}
+.robot-j {
+position: absolute;
+z-index: 2;
+z-index: 1;
+bottom: 1px;
+width: 4px;
+height: 8px;
+animation: who-worker 30s infinite linear alternate;
+opacity: .9;
+background: #fff;
+}
+.kissing-couple {
+position: absolute;
+z-index: 3;
+right: 10px;
+bottom: 1px;
+width: 4px;
+height: 8px;
+background: #fff;
+}
+.kissing-couple:after {
+/* Trick for a second person*/
+position: absolute;
+z-index: 3;
+right: 8px;
+width: 4px;
+height: 8px;
+content: '';
+animation: couple-kiss-animation 5s infinite linear alternate;
+background: #fff;
+}
+.kissing-couple:before {
+/* I've tried and this is worked! 3 in 1*/
+position: absolute;
+z-index: 3;
+right: 4px;
+bottom: 14px;
+width: 9px;
+height: 7px;
+content: '';
+animation: couple-heart-animation 5s infinite linear;
+background: red;
+}
+.void-worker {
+position: absolute;
+z-index: 3;
+right: 10px;
+bottom: 1px;
+width: 4px;
+height: 8px;
+animation: worker-walk 6s infinite linear alternate;
+background: #fff;
+}
+.bird-1 {
+position: absolute;
+width: 1%;
+height: 1%;
+animation: fly-1 20s infinite linear alternate;
+background: #fff;
+}
+.bird-2 {
+position: absolute;
+width: 1%;
+height: 1%;
+animation: fly-2 40s infinite linear alternate;
+background: #fff;
+}
+
+/* Custom elements
+------------------------------------------------------------------------------------------------------------
+*/
+
+.office-furniture {
+position: absolute;
+bottom: 0;
+left: 15%;
+width: 30px;
+height: 8px;
+background: #848484;
+}
+.office-screen {
+position: absolute;
+right: 7%;
+bottom: 0;
+width: 12%;
+height: 10%;
+animation: furniture-tv-light 1s infinite ease-in-out alternate;
+border-bottom: 5px solid #000;
+background: #fff;
+}
+.pipe-water {
+position: absolute;
+z-index: 2;
+bottom: 0;
+width: 100%;
+height: 30%;
+animation: pipe-waterflow 10s infinite ease-in-out alternate;
+background: #44a6c6;
+}
+.pipe-waterpump {
+/* I was in need to logically show where is water come from*/
+position: absolute;
+z-index: 1;
+right: 40%;
+bottom: 40%;
+width: 20%;
+height: 16px;
+border-bottom: 8px aqua solid;
+background: #545454;
+}
+.pipe-valve {
+/* Small detail*/
+position: absolute;
+right: 0;
+bottom: 45%;
+width: 3px;
+height: 12px;
+background: #de0303;
+}
+.big-water-for-github {
+/* Octopus like to swim*/
+position: absolute;
+z-index: 1;
+bottom: 0;
+width: 100%;
+height: 30%;
+animation: github-waterflow 10s infinite ease-in-out alternate;
+background: #44a6c6;
+}
+.experience-portal-bottom {
+position: absolute;
+bottom: 0;
+left: 0;
+width: 12%;
+height: 20%;
+border-top: 2px solid #8e8e8e;
+background: #585858;
+}
+.experience-portal-top {
+position: absolute;
+top: 0;
+left: 0;
+width: 6%;
+height: 55%;
+border-bottom: 2px solid #8e8e8e;
+background: #585858;
+}
+.furniture.mesa-part:nth-of-type(1) {
+width: 20%;
+height: 40%;
+background: #5d5d5d;
+}
+.furniture.mesa-part:nth-of-type(2) {
+width: 20%;
+height: 10%;
+background: #7b7b7b;
+}
+.furniture.mesa-part:nth-of-type(3) {
+width: 10%;
+height: 30%;
+background: #4e4e4e;
+}
+.furniture.mesa-part:nth-of-type(4) {
+width: 31%;
+height: 4%;
+background: #7b7b7b;
+}
+.furniture.mesa-part:nth-of-type(5) {
+width: 20%;
+height: 15%;
+background: #5d5d5d;
+}
+.furniture.projects-part:nth-of-type(1) {
+width: 4%;
+height: 75%;
+background: #000;
+}
+.furniture.projects-part:nth-of-type(2) {
+width: 8%;
+}
+.furniture.projects-part:nth-of-type(3) {
+width: 2%;
+height: 15%;
+background: #424242;
+}
+.furniture.projects-part:nth-of-type(4) {
+width: 7%;
+height: 22%;
+background: #5d5d5d;
+}
+.furniture.projects-part:nth-of-type(5) {
+width: 20%;
+height: 7%;
+background: #444;
+}
+.furniture.projects-part:nth-of-type(6) {
+width: 3%;
+height: 12%;
+background: #7d7d7d;
+}
+.furniture.projects-part:nth-of-type(7) {
+width: 50%;
+height: 10%;
+background: #444;
+}
+.furniture.projects-part:nth-of-type(8) {
+width: 1%;
+height: 40%;
+background: #b7b7b7;
+}
+.furniture.projects-part:nth-of-type(9) {
+width: 10%;
+height: 13%;
+background: #000;
+}
+.furniture.projects-part:nth-of-type(10) {
+width: 10%;
+height: 35%;
+background: #444;
+}
+.who-am-i .furniture:nth-of-type(1) {
+width: 5%;
+height: 20%;
+background: #545454;
+}
+.who-am-i .furniture:nth-of-type(2) {
+width: 26%;
+}
+.who-am-i .furniture:nth-of-type(3) {
+width: 12%;
+height: 28%;
+background: #656565;
+}
+.who-am-i .furniture:nth-of-type(4) {
+width: 5%;
+height: 12%;
+background: #545454;
+}
+.water-office .furniture:nth-of-type(1) {
+width: 24%;
+height: 5%;
+background: #545454;
+}
+.water-office .furniture:nth-of-type(2) {
+width: 10%;
+height: 21%;
+background: #636363;
+}
+.garden .furniture:nth-of-type(1) {
+position: absolute;
+top: 0;
+width: 100%;
+height: 19%;
+background: #003106;
+}
+.garden .furniture:nth-of-type(2) {
+width: 20%;
+height: 30%;
+border-bottom: 10px solid #332f0c;
+background: #00421b;
+}
+.garden .furniture:nth-of-type(3) {
+width: 30%;
+height: 19%;
+border-bottom: 10px solid #332f0c;
+background: #005021;
+}
+.garden .furniture:nth-of-type(4) {
+width: 15%;
+height: 51%;
+border-bottom: 10px solid #332f0c;
+background: #003114;
+}
+.garden .furniture:nth-of-type(5) {
+width: 35%;
+height: 27%;
+border-bottom: 10px solid #332f0c;
+background: #00230e;
+}
+.work-experience .furniture:nth-of-type(1) {
+width: 15%;
+height: 30%;
+background: #505050;
+}
+.work-experience .furniture:nth-of-type(2) {
+width: 15%;
+height: 11%;
+background: #868686;
+}
+.work-experience .furniture:nth-of-type(3) {
+width: 45%;
+height: 20%;
+background: #4a4a4a;
+}
+.second-work .furniture {
+position: absolute;
+bottom: 0;
+width: 40%;
+height: 2%;
+animation: fan-working 20s infinite linear alternate;
+background: #fff;
+}
+.sewers .furniture:nth-of-type(1) {
+position: absolute;
+top: -25%;
+left: 30%;
+width: 5%;
+height: 100%;
+border-bottom: 3px solid #ccc;
+background: #3a3a3a;
+}
+.sewers .furniture:nth-of-type(2) {
+position: absolute;
+top: -35%;
+left: 55%;
+width: 5%;
+height: 100%;
+border-bottom: 3px solid #ccc;
+background: #464646;
+}
+.sewers .furniture:nth-of-type(3) {
+position: absolute;
+top: -25%;
+left: 90%;
+width: 5%;
+height: 100%;
+border-bottom: 3px solid #ccc;
+background: #525252;
+}
+.powerplant .furniture:nth-of-type(2) {
+position: absolute;
+z-index: 1;
+right: 5%;
+bottom: 10%;
+width: 90%;
+height: 45%;
+background: #545454;
+}
+.powerplant .furniture:nth-of-type(3) {
+position: absolute;
+z-index: 1;
+top: 0;
+right: 28%;
+width: 10%;
+height: 50%;
+background: #656565;
+}
+.powerplant .furniture:nth-of-type(4) {
+position: absolute;
+z-index: 1;
+top: 37%;
+right: 10%;
+width: 10%;
+height: 50%;
+animation: pulsating 1s infinite ease-in-out alternate;
+background: #bbb;
+}
+.powerplant .furniture:nth-of-type(5) {
+position: absolute;
+z-index: 1;
+top: 35%;
+bottom: 57%;
+left: 18%;
+width: 17%;
+height: 40%;
+background: #bbb;
+}
+.second-work .floating-box {
+position: absolute;
+z-index: 1;
+bottom: 0;
+width: 10%;
+height: 20%;
+animation: float-it 20s infinite linear alternate;
+opacity: .6;
+background: #585858;
+}
+.magnet-boxes-1 {
+position: absolute;
+z-index: 1;
+right: 9%;
+bottom: 1px;
+width: 12%;
+height: 30%;
+background: #bfbfbf;
+}
+.magnet-boxes-2 {
+position: absolute;
+z-index: 2;
+right: 20%;
+bottom: 1px;
+width: 7%;
+height: 14%;
+background: #efefef;
+}
+.magnet-boxes-3 {
+position: absolute;
+z-index: 2;
+right: 50%;
+bottom: -8%;
+width: 12%;
+height: 25%;
+transform: rotate(-44deg);
+background: #c1c1c1;
+}
+.magnet-boxes-4 {
+position: absolute;
+z-index: 3;
+right: 24%;
+bottom: 1px;
+width: 20%;
+height: 19%;
+background: #868686;
+}
+
+/* Animations 
+------------------------------------------------------------------------------------------------------------
+*/
+
+@keyframes car-moves-and-sparks {
+/* I like it, I love it*/
+0%{left:-50%;background:#fff0}
+5%{background:#ff0}
+6%{background:#fff0}
+7%{background:#ff0}
+8%{background:#fff0}
+30%{left:-50%}
+70%{left:150%;background:#fff0}
+75%{background:#ff0}
+76%{background:#fff0}
+77%{background:#ff0}
+78%{background:#fff0}
+100%{left:150%}
+}
+@keyframes main-lift-animation {
+0%{top:-23%}
+10%{top:-23%}
+20%{top:142%}
+30%{top:142%}
+90%{top:1262%}
+100%{top:1262%}
+}
+@keyframes experience-lift-animation {
+0%{top:-6%}
+30%{top:-6%}
+70%{top:305%}
+100%{top:305%}
+}
+@keyframes experience-lift-animation-box {
+0%{top:-60px;opacity:0}
+15%{top:-11px;opacity:1}
+37%{top:-215%;opacity:1}
+38%{top:15%;opacity:1}
+50%{top:1500%;opacity:1}
+51%{top:1500%;opacity:0}
+100%{top:0;opacity:0}
+}
+@keyframes lift-stuck-animation {
+/* T-S-S-T-S-S-S-K-K-K-K*/
+0%{top:-10%}
+15%{top:-5%}
+20%{top:-5%}
+45%{top:-10%}
+50%{top:-5%}
+100%{top:-10%}
+}
+@keyframes passengers-first-animation {
+0%{right:0;opacity:1}
+10%{right:50%;opacity:1}
+11%{opacity:0}
+30%{opacity:0}
+90%{opacity:0}
+100%{opacity:0}
+}
+@keyframes passengers-second-animation {
+/* Come on the second floor. Goes to the door. Become angry. Heavily knocks. Goes back to the lift. Replay.*/
+0%{opacity:0}
+19%{opacity:0}
+24%{left:0;opacity:1}
+30%{left:97%;background:#fff}
+35%{left:97%;background:red}
+36%{background:#fff}
+37%{background:red}
+38%{background:#fff}
+39%{background:red}
+40%{left:93%;background:#fff}
+41%{left:97%;background:red}
+42%{left:92%;background:#fff}
+43%{left:97%;background:red}
+44%{left:93%;background:#fff}
+45%{left:97%;background:red}
+46%{left:97%;background:#fff}
+90%{left:32%}
+100%{left:45%}
+}
+/* Made them Walking more randomly, so they don't look as robots:*/
+@keyframes walking-right-a {
+0%{left:0}
+100%{left:400%}
+}
+@keyframes walking-right-b {
+0%{left:65%}
+100%{left:380%}
+}
+@keyframes walking-right-c {
+0%{left:120%}
+100%{left:396%}
+}
+@keyframes walking-right-d {
+0%{left:35%}
+100%{left:283%}
+}
+@keyframes walking-left-a {
+0%{right:65%}
+100%{right:450%}
+}
+@keyframes walking-left-b {
+0%{right:5%}
+100%{right:100%}
+}
+@keyframes walking-left-c {
+0%{right:110%}
+100%{right:260%}
+}
+@keyframes walking-left-d {
+0%{right:15%}
+100%{right:334%}
+}
+@keyframes walking-director {
+0%{right:5%}
+20%{right:0}
+40%{right:10%}
+50%{right:10%}
+100%{right:20%}
+}
+@keyframes magnet-worker {
+0%{left:6%}
+40%{left:33%}
+50%{left:33%}
+90%{left:95%}
+100%{left:95%}
+}
+@keyframes who-worker {
+0%{right:12%}
+40%{right:33%}
+50%{right:36%}
+90%{right:57%}
+100%{right:59%}
+}
+@keyframes furniture-tv-light {
+0%{background:#757575}
+100%{background:#fff}
+}
+@keyframes pipe-waterflow {
+0%{height:10%}
+100%{height:70%}
+}
+@keyframes github-waterflow {
+0%{height:15%}
+100%{height:80%}
+}
+@keyframes couple-kiss-animation {
+/* It's just 1 pixel difference. But what a story!*/
+0%{right:6px}
+45%{right:5px}
+50%{right:5px}
+55%{right:5px}
+100%{right:6px}
+}
+@keyframes couple-heart-animation {
+/* Whew! Still a Better Love Story than Twilight. */
+0%{bottom:0;opacity:0}
+80%{bottom:14px;opacity:1}
+100%{bottom:14px;opacity:0}
+}
+@keyframes work-in-process {
+0%{left:50%;background:#fff}
+44%{left:50%;background:#fff}
+49%{left:0;background:#fff}
+50%{left:0;background:red}
+/* Feel the power of the machine! */
+80%{left:50%;background:#fff}
+100%{left:50%;background:#fff}
+}
+@keyframes worker-walk {
+0%{right:15%}
+100%{right:25%}
+}
+@keyframes earthquake {
+0%{transform:rotate(0)}
+49%{transform:rotate(0)}
+50%{transform:scaleY(1.1);transform:rotate(2deg)}
+/* Almost broke my screen. */
+55%{transform:rotate(0)}
+100%{transform:rotate(0)}
+}
+@keyframes magnetism {
+0%{left:63%}
+10%{left:63%}
+20%{left:63%;background:#7d00af}
+36%{background:#7d00af}
+40%{left:222%;background:#fff}
+50%{left:222%}
+97%{left:60%}
+100%{left:63%}
+}
+@keyframes magnetism-box {
+0%{top:2150%;opacity:1;background:#fff}
+10%{top:2150%;opacity:1;background:#fff}
+20%{top:100%;opacity:1;background:#fff}
+22%{top:150%;opacity:1;background:#fff}
+40%{top:150%;opacity:1;background:#fff}
+50%{top:3150%;opacity:0}
+97%{top:0;opacity:0}
+100%{top:0;opacity:0}
+}
+@keyframes sewersflow {
+0%{height:30%}
+100%{height:34%}
+}
+@keyframes creepmove {
+0%{opacity:0}
+45%{opacity:1;left:5%}
+65%{left:25%}
+100%{left:55%}
+}
+@keyframes pulsating {
+0%{height:8%}
+100%{height:10%}
+}
+@keyframes rotating {
+0%{transform:rotate(0)}
+100%{transform:rotate(360deg)}
+}
+@keyframes fly-1 {
+0%{top:10%;left:0}
+10%{top:10%;left:0}
+40%{top:5%;left:20%}
+60%{top:5%;left:20%}
+90%{top:70%;left:80%}
+100%{top:70%;left:80%}
+}
+@keyframes fly-2 {
+0%{top:70%;right:0}
+10%{top:10%;right:40%}
+40%{top:40%;right:60%}
+60%{top:15%;right:20%}
+90%{top:30%;right:40%}
+100%{top:70%;right:50%}
+}
+@keyframes push-it {
+0%{width:0}
+5%{width:40%}
+}
+@keyframes float-it {
+0%{bottom:80%}
+100%{bottom:120%}
+}
+@keyframes fan-working {
+0%,8%,16%,24%,32%,40%,48%,56%,64%,72%,78%,86%,94%{height:2%}
+4%,12%,20%,28%,36%,44%,52%,60%,68%,76%,82%,90%,98%{height:4%}
+}
+/*
+------------------------------------------------------------------------------------------------------------
+*/
