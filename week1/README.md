@@ -18,6 +18,6 @@ prefixes-is-a-cancer.css - minified css file with prefixes for old and very old 
 
 - [CSS autoprefixer](https://github.com/autoprefixer/autoprefixer.github.io/)
 
-- [CSSO (CSS Optimizer)(https://github.com/css/csso)
+- [CSSO (CSS Optimizer)](https://github.com/css/csso)
 
 
