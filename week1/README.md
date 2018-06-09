@@ -1,7 +1,7 @@
-#Resume [Live Version] (https://acimanx.github.io/hyf-html-css/week1)
+# Resume [Live Version] (https://acimanx.github.io/hyf-html-css/week1)
 This is my homework for week1 in hyf school
 
-##Structure:
+## Structure:
 
 index.html - main html document
 
@@ -18,7 +18,7 @@ favicon.png - icon
 --img/ - images
 ```
 
-#External tools that was used:
+# External tools that was used:
 
 - [CSS autoprefixer](https://github.com/autoprefixer/autoprefixer.github.io/)
 
