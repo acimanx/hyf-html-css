@@ -3,20 +3,15 @@ This is my homework for week1 in hyf school
 
 ## Structure:
 
-index.html - main html document
-
+```
+index.html - main html
 favicon.png - icon
 
-```
---css/ - stylesheets
+./css/ - stylesheets
+style.css - readable css file with comments
+prefixes-is-a-cancer.css - minified css file with prefixes for old and very old browsers
 
-----style.css - readable css file with comments
-
-----prefixes-is-a-cancer.css - minified css file with prefixes for old and very old browsers
-
-
---img/ - images
-```
+./img/ - images
 
 # External tools that was used:
 
