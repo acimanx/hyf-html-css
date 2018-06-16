@@ -1,0 +1,527 @@
+a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,caption,center,cite,code,dd,del,details,dfn,div,dl,dt,em,embed,fieldset,figcaption,figure,footer,form,h1,h2,h3,h4,h5,h6,header,hgroup,html,i,iframe,img,ins,kbd,label,legend,li,main,mark,menu,nav,object,ol,output,p,pre,q,ruby,s,samp,section,small,span,strike,strong,sub,summary,sup,table,tbody,td,tfoot,th,thead,time,tr,tt,u,ul,var,video{margin:0;padding:0;border:0;font:inherit;vertical-align:baseline}article,aside,details,figcaption,figure,footer,header,hgroup,main,menu,nav,section{display:block}[hidden]{display:none}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:after,blockquote:before,q:after,q:before{content:'';content:none}table{border-collapse:collapse;border-spacing:0}
+*,*:after,*:before{-moz-box-sizing:border-box;-webkit-box-sizing:border-box;-ms-box-sizing:border-box;box-sizing:border-box}
+
+@keyframes flick {
+0%,to{background:url(grid1.png) no-repeat 50% 50%;background-size:contain}
+50%{background:url(grid2.png) no-repeat 50% 50%;background-size:contain}
+}
+@keyframes drone {
+0%{top:-5%;left:25%;width:1%;opacity:1;filter:blur(1px) brightness(.6)}
+20%,30%{top:10%;left:46%;width:3%;filter:blur(1px) brightness(.9)}
+40%,50%{top:55%;left:22%;width:5%;filter:blur(1px) brightness(1.1)}
+70%,80%{top:20%;left:0;width:3%;filter:blur(2px) brightness(1)}
+90%,97%{top:-15%;left:20%;width:15%;opacity:1;filter:blur(1px) brightness(1.5)}
+97%,to{top:30%;left:23%;width:3%;opacity:0;filter:blur(1px) brightness(.3)}
+}
+
+body,html {
+    font: 100 1vw/1 'Roboto',sans-serif;
+    height: 100%
+}
+
+body,html,main {
+    width: 100%
+}
+
+li {
+    font-size: 1rem;
+    position: relative;
+    width: 22vw;
+    height: 18vw;
+    margin: 0 0 2vw 2vw;
+    transition: color 1s ease-in-out,filter .2s ease-in-out,border 1s ease-in-out;
+    border: .2rem solid #dcdcdc;
+    filter: brightness(1)
+}
+
+li:hover {
+    color: #000;
+    border: .1rem solid #000;
+    filter: brightness(1.2)
+}
+
+li::after,li::before {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60%
+}
+
+li::before {
+    height: 10%;
+    content: '';
+    transition: background 1s ease-in-out;
+    text-align: center;
+    color: #fff;
+    background: #dcdcdc
+}
+
+li:hover::before {
+    background: #5d5d5d
+}
+
+li::after {
+    height: 20%;
+    padding: 10% 0 0 13%;
+    content: '10.09421 BTC';
+    transition: color 1s ease-in-out;
+    opacity: .8;
+    color: #001;
+    background: url(BitcoinSign.svg) no-repeat 5% 50%;
+    background-size: 15%
+}
+
+h2::after,li:hover::after {
+    color: #fff
+}
+
+h3 {
+    right: 0;
+    overflow: hidden;
+    text-align: center
+}
+
+header::before,li p {
+    position: absolute
+}
+
+li p {
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
+    height: 30%;
+    padding: 0 5%;
+    cursor: pointer;
+    text-align: center;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    color: #5a5a5a
+}
+
+h3,li p:after,li::after {
+    font-weight: 400
+}
+
+li p:after {
+    line-height: 2;
+    position: fixed;
+    top: 60%;
+    left: 0;
+    display: none;
+    padding: 0 1rem;
+    content: 'Best Price!';
+    transform: rotate(-90deg);
+    transform-origin: 0 0;
+    color: #fff;
+    background: #11365a;
+    text-shadow: 0 0 .1rem;
+    direction: ltr
+}
+
+h3,header {
+    position: relative;
+    margin: 0 auto
+}
+
+h3 {
+    font-size: 150%;
+    width: 80%;
+    padding: 1% 0 0;
+    white-space: initial;
+    text-overflow: clip;
+    color: #000;
+    border-bottom: 1rem solid rgba(255,255,255,.8)
+}
+
+header::after,header::before {
+    white-space: pre-line
+}
+
+h1::after,h1::before {
+    content: '';
+    white-space: pre-line
+}
+
+h2,header {
+    width: 100%
+}
+
+header {
+    display: flex;
+    height: 100%;
+    border: 1rem solid;
+    background: #3d3a3e;
+    align-items: center;
+    justify-content: center
+}
+
+header::before {
+    font-size: 70%;
+    line-height: 1.7;
+    bottom: 0;
+    left: 0;
+    padding: 1rem 3rem 1rem 1rem;
+    content: 'RGGD stat system v0.43599 \A Refresh interval: 12HR \A\A GRID information:\A System status: stable\A Cameras working: 605 \A Drones operating: 34 \A \A Targets count: 114 \A Days count: 9 \A Days to day zero: 48';
+    text-align: left;
+    color: #d8a6be;
+    border-right: .1rem solid;
+    background: #282529;
+    background: rgba(40,37,41,.2);
+    text-shadow: 0 .1rem 0 #000;
+    align-self: flex-end
+}
+
+h1,header::after {
+    position: absolute;
+    color: #fff
+}
+
+header::after {
+    line-height: .9;
+    right: 0;
+    bottom: 0;
+    width: 40rem;
+    padding: 2%;
+    content: '(\3063 \25D4 \25E1 \25D4 )\3063  \2665 \00A0 Hiya n wlc 2 our websIt n d dEp web! \A \A We hop u rED an info bout our rlz dat snt 2 u. \A \A 1. Scroll dwn n chuse ur drone. ;) \A \A 2. Snd us ur choice w/ atachd PGP public key. \A \A 3. Pay d required amount n BTC. \A \A 4. W8 4 an invite.  \A \A 5. ... \A \A  6. Njoy!  \A \A \A *Dnt shr info abt dis prjct 4 ur own safty \2665';
+    word-break: keep-all;
+    border-left: .1rem solid;
+    background: #282529;
+    background: rgba(40,37,41,.2);
+    text-shadow: 0 .1rem 0 #000;
+    overflow-wrap: break-word
+}
+
+h1 {
+    font-size: 10rem;
+    width: 80%;
+    height: 50%;
+    text-align: right;
+    text-shadow: .1rem .5rem .1rem #302e31
+}
+
+h1::before {
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    animation: flick 20s linear infinite alternate;
+    background: url(grid1.png) no-repeat 50% 50% #fff;
+    background-size: contain
+}
+
+h1::after,h1::before,img {
+    position: absolute;
+    display: block
+}
+
+h1::after {
+    top: 0;
+    left: 0;
+    width: 10%;
+    height: 14%;
+    animation: drone 30s linear infinite;
+    background: url(drone.gif) no-repeat 50% 50%;
+    background-size: contain
+}
+
+h2 {
+    font-size: 2rem;
+    right: 0;
+    margin: 0 0 4rem;
+    padding: 4vh 0;
+    text-align: center;
+    border: .1rem solid #ececec;
+    background: #f7f7f7
+}
+
+h2::after {
+    font-size: 30%;
+    font-weight: 900;
+    padding: .4rem;
+    content: 'For those who love action!';
+    vertical-align: top;
+    background: #d90000
+}
+
+img,p,ul {
+    margin: 0 auto
+}
+
+img {
+    z-index: -1;
+    top: 15%;
+    left: 25%;
+    width: auto;
+    height: 50%;
+    opacity: .9;
+    background: #fff
+}
+
+p,ul {
+    width: 100%
+}
+
+ul>li:nth-child(1) {
+    width: 46vw
+}
+
+ul>li:nth-child(1) img {
+    top: 0;
+    left: 25%;
+    height: 90%;
+    opacity: .6
+}
+
+ul>li:nth-child(1) p:after {
+    content: '-30% SALE!';
+    color: #fff;
+    background: #d62332
+}
+
+ul li:nth-child(-n+3) p:after {
+    display: block
+}
+
+ul>li:nth-child(-n+3):after {
+    font-weight: 900;
+    content: '5.124049 BTC'
+}
+
+ul>li:nth-child(1):after {
+    padding: 5% 0 0 13%;
+    content: '6.995423 BTC';
+    background-size: 10%
+}
+
+section {
+    overflow: hidden;
+    width: 100%
+}
+
+:nth-of-type(2)>ul {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: flex-start;
+    align-items: flex-start
+}
+
+:nth-of-type(2)>ul li {
+    align-self: auto
+}
+
+:nth-of-type(1)>ul li {
+    float: left
+}
+
+:nth-of-type(2)>h2::after {
+    content: 'For those who love to wait';
+    background: #04756f
+}
+
+@media only screen and (max-width:40em) {
+    header {
+        position: relative;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center
+    }
+
+    h1,header::after,header::before {
+        position: relative;
+        width: 100%;
+        margin: 5% 0
+    }
+
+    h1 {
+        top: 0;
+        height: 20%;
+        padding: 20%;
+        background: #000;
+        background: rgba(0,0,0,.2)
+    }
+
+    header::after,header::before {
+        bottom: 0
+    }
+
+    header::after {
+        font-size: 3rem;
+        top: 0;
+        border-left: 0
+    }
+
+    h1::after,h1::before,header::before {
+        display: none
+    }
+
+    ul>li:nth-child(1) {
+        width: 90vw
+    }
+
+    li {
+        width: 44vw;
+        height: 55rem
+    }
+
+    li p {
+        font-size: 2.5rem
+    }
+
+    li img {
+        top: 25%;
+        left: 15%;
+        height: 30%
+    }
+
+    ul>li:nth-child(1) img {
+        top: 10%;
+        left: 25%;
+        height: 60%
+    }
+
+    li p:after {
+        font-size: 2rem;
+        line-height: 0;
+        padding: 2rem
+    }
+
+    li::before {
+        width: 100%;
+        height: 20%
+    }
+
+    li::after {
+        font-size: 3rem;
+        width: 70%;
+        padding: 10% 0 0 25%;
+        background-size: 25%
+    }
+
+    h2 {
+        font-size: 6rem
+    }
+
+    section h2::after {
+        display: block;
+        padding: 1rem
+    }
+
+    h3 {
+        font-size: 4rem
+    }
+}
+
+@media only screen and (min-width:40.063em) and (max-width:64em) {
+    header {
+        position: relative;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center
+    }
+
+    h1,header::after,header::before {
+        position: relative;
+        width: 100%;
+        margin: 5% 0
+    }
+
+    h1 {
+        top: 0;
+        height: 20%;
+        padding: 20%;
+        background: #000;
+        background: rgba(0,0,0,.2)
+    }
+
+    h1::before {
+        top: 20%;
+        left: 2%
+    }
+
+    h1::after {
+        display: none
+    }
+
+    header::after,header::before {
+        bottom: 0
+    }
+
+    header::after {
+        font-size: 3rem;
+        top: 0;
+        border-left: 0
+    }
+
+    header::before {
+        display: none
+    }
+
+    h2 {
+        font-size: 4rem
+    }
+
+    h3 {
+        font-size: 3rem
+    }
+
+    ul>li:nth-child(-n+2) {
+        width: 46vw
+    }
+
+    ul>li:nth-child(-n+2)::after {
+        padding: 5% 0 0 13%
+    }
+
+    ul>li:nth-child(-n+2) img {
+        top: 10%;
+        left: 20%;
+        height: 60%
+    }
+
+    li {
+        width: 30vw;
+        height: 40rem
+    }
+
+    li p {
+        font-size: 2.5rem
+    }
+
+    li img {
+        top: 20%;
+        left: 15%;
+        height: 40%
+    }
+
+    ul>li:nth-child(1) img {
+        top: 10%;
+        left: 25%;
+        height: 60%
+    }
+
+    li p:after {
+        font-size: 2rem;
+        line-height: 0;
+        padding: 2rem
+    }
+
+    li::before {
+        width: 100%;
+        height: 20%
+    }
+
+    li::after {
+        font-size: 2rem;
+        width: 80%;
+        padding: 10% 0 0 13%;
+        background-size: 10%
+    }
+
+    :nth-of-type(1)>h2::after {
+        display: block;
+        padding: 1rem
+    }
+}
+
