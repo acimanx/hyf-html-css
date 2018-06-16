@@ -1,4 +1,4 @@
-# GRID - [Live Version](https://acimanx.github.io/hyf-html-css/week2)
+# Grids - dystopia - [Live Version](https://acimanx.github.io/hyf-html-css/week2)
 This is my homework for week2 in hyf school
 *The main condition was to not edit the index.html
 
