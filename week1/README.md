@@ -1,5 +1,6 @@
-# Resume - [Live Version](https://acimanx.github.io/hyf-html-css/week1)
-This is my homework for week1 in hyf school
+# Resume 
+## [Watch it on Github](https://acimanx.github.io/hyf-html-css/week1) 
+This is my homework for week1 in hyf code school
 
 ## Structure:
 
