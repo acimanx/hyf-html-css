@@ -1,6 +1,6 @@
 # Grids (dystopian)*
 ## [Watch it on Github](https://acimanx.github.io/hyf-html-css/week2) 
-This is my homework for 2nd week in hyf school
+This is my homework after 2nd week in hyf school
 
 *The main rule was to not edit original index.html
 
