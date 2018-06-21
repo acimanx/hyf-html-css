@@ -51,12 +51,14 @@ else
 
 while true; do
 printf "It seems that script was already executed\\nPress \\e[31m \\e[5mR \\e[0mto remove existing folder.\\nPress \\e[32m \\e[5mQ \\e[0mto quit."
+#different color and animation for choices
 read -r yn
 case "$yn" in
 [Qq]* ) echo " Bye-bye! "; sleep 1; exit;;
 [Rr]* ) echo " Folder was removed. Please, rerun script again."; rm -r "$directory"; sleep 1; exit;;
 * ) echo "Please answer R or Q.";;
 esac
+#promt if directory exist
 
 done
 
