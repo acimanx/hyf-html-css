@@ -1,0 +1,742 @@
+/*! sanitize.css v5.0.0 | CC0 License | github.com/jonathantneal/sanitize.css */button,hr,input{overflow:visible}audio,canvas,progress,video{display:inline-block}progress,sub,sup{vertical-align:baseline}[type=checkbox],[type=radio],legend{box-sizing:border-box;padding:0}[aria-disabled],[disabled],html{cursor:default}*,::after,::before{background-repeat:no-repeat;box-sizing:inherit}::after,::before{text-decoration:inherit;vertical-align:inherit}html{box-sizing:border-box;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}article,aside,details,figcaption,figure,footer,header,main,menu,nav,section{display:block}body,button,input,optgroup,select,textarea{margin:0}h1{font-size:2em;margin:.67em 0}figure{margin:1em 40px}hr{box-sizing:content-box;height:0}nav ol,nav ul{list-style:none}code,kbd,pre,samp{font-family:monospace,monospace;font-size:1em}a{background-color:transparent;-webkit-text-decoration-skip:objects}abbr[title]{border-bottom:none;text-decoration:underline;text-decoration:underline dotted}b,strong{font-weight:bolder}dfn{font-style:italic}mark{background-color:#ff0;color:#000}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative}sub{bottom:-.25em}sup{top:-.5em}::-moz-selection{background-color:#b3d4fc;color:#000;text-shadow:none}::selection{background-color:#b3d4fc;color:#000;text-shadow:none}audio,canvas,iframe,img,svg,video{vertical-align:middle}audio:not([controls]){display:none;height:0}img{border-style:none}svg{fill:currentColor}svg:not(:root){overflow:hidden}table{border-collapse:collapse}button,input,select,textarea{color:inherit;font-family:inherit;font-size:inherit;line-height:inherit}button,select{text-transform:none}[type=reset],[type=submit],button,html [type=button]{-webkit-appearance:button}[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner,button::-moz-focus-inner{border-style:none;padding:0}[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring,button:-moz-focusring{outline:ButtonText dotted 1px}legend{color:inherit;display:table;max-width:100%;white-space:normal}textarea{overflow:auto;resize:vertical}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}[type=search]::-webkit-search-cancel-button,[type=search]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}[hidden],template{display:none}[tabindex],a,area,button,input,label,select,summary,textarea{-ms-touch-action:manipulation;touch-action:manipulation}[aria-busy=true]{cursor:progress}[aria-controls]{cursor:pointer}[aria-hidden=false][hidden]:not(:focus){clip:rect(0,0,0,0);display:inherit;position:absolute}
+@keyframes unlock_character {
+    30%,70% {
+        transform: translate(0)
+    }
+
+    to {
+        transform: translate(-150%)
+    }
+}
+
+body,html {
+    width: 100vw;
+    height: 100vh;
+    counter-reset: coins1
+}
+
+body {
+    font-family: 'IBM Plex Sans',sans-serif;
+    font-weight: 100;
+    background-image: radial-gradient(circle,#00ff21,#a2a700,#995800,#5a241d,#000)
+}
+
+html.index {
+    overflow-x: hidden;
+    height: 999vh
+}
+
+.border {
+    width: 100%;
+    height: 100%
+}
+
+.grid {
+    position: relative;
+    display: grid;
+    height: 100vh;
+    grid-template-columns: repeat(8,1fr);
+    grid-template-rows: repeat(3,1fr)
+}
+
+main,main.index {
+    position: relative;
+    background: 0 0;
+    grid-column: 2/span 6;
+    grid-row: 2
+}
+
+main {
+    display: flex;
+    justify-content: center
+}
+footer {
+    display: flex;
+    justify-content: center;
+    grid-column: 2/span 6;
+    grid-row: 3;
+    align-self: flex-end;
+    background: #000000;
+    color: #FFF;
+    opacity: .5;
+    padding: .1rem;
+    font-weight: 700;
+
+}
+.card,main.index {
+    display: flex;
+    flex-direction: column
+}
+
+main.index {
+    height: 100vh;
+    flex-wrap: wrap;
+    justify-content: flex-start
+}
+
+.card {
+    width: 29rem;
+    height: 19rem;
+    margin-bottom: 1rem;
+    margin-left: 1rem;
+    text-align: center;
+    color: #fff;
+    background: #000;
+    align-items: center;
+    justify-content: center
+}
+
+.redbutton {
+    display: inline-block;
+    width: 15vmin;
+    height: 15vmin;
+    border-radius: 50%;
+    background-color: red;
+    box-shadow: 5px 5px 0 #580000
+}
+
+.redbutton:hover {
+    background-color: #a70101
+}
+
+.card-small {
+    max-height: 10rem
+}
+
+.card-big {
+    height: 28rem
+}
+
+.maze-blocker,.thing {
+    width: 100%;
+    height: 100%
+}
+
+.thing {
+    position: absolute;
+    display: none;
+    content: ''
+}
+
+.maze-blocker {
+    z-index: 100;
+    display: flex;
+    color: #fff;
+    background: #000;
+    align-items: center;
+    justify-content: center
+}
+.show {
+    animation: slowshow 20s ease-in ;
+    opacity: 0.2
+}
+
+@keyframes slowshow {
+  0% {opacity:0;}
+  15% {opacity:1;}
+  100% {opacity:0.2}
+}
+
+
+
+.item,.maze-blocker,input {
+    position: absolute
+}
+
+input {
+    top: 0;
+    left: 0;
+    outline: 0;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 0;
+    height: 0
+}
+
+.item {
+    z-index: 5;
+    display: block;
+    width: 26px;
+    height: 26px;
+    border-radius: 4px;
+    background: #7a0089
+}
+
+.events-wrap {
+    width: 5vmin
+}
+
+
+.event-info-1 {
+    position: absolute;
+    z-index: 20;
+    top: 5vmin;
+    left: 0;
+    width: auto;
+    padding: 0 10vmin;
+    transition: all .3s 1s ease-out;
+    transform: translate(-150%);
+    border-radius: 10px;
+    background: #fff
+}
+
+.event-info-1:before {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    bottom: 10px;
+    left: 10px;
+    width: 32px;
+    height: 32px;
+    content: ''
+}
+
+.events_wrap>div {
+    position: relative;
+    display: none;
+    padding-left: 1rem
+}
+
+.unlock {
+    position: absolute;
+    z-index: 32;
+    width: 100%;
+    background: #000
+}
+.stats {
+  padding: 1rem;
+}
+.stats:before {
+    content: counter(coins1)
+}
+
+.info {
+    position: absolute;
+    height: 100%;
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1.2em;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    width: 20vmin;
+    color: #fff;
+    background: #000;
+    align-items: center
+}
+
+.error {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 150;
+    background: black;
+    color: #FFF;
+    text-align: center;
+    padding: 33%;
+}
+
+
+
+.intro-text {
+    font-size: 2rem;
+    color: #fff
+}
+
+.intro-text2 {
+    font-size: 1rem;
+    color: #fff
+}
+
+.intro-text3 {
+    width: 50%;
+    color: #fff;
+    align-self: flex-end
+}
+
+.audio,header {
+    display: flex;
+    width: 100%
+}
+
+header {
+    flex-direction: column;
+    height: 20rem;
+    padding-top: 5rem;
+    grid-row: 1;
+    grid-column: 2/span 6;
+    position: relative
+}
+
+.audio {
+    position: absolute;
+    top: 0;
+    justify-content: center
+}
+.audio_content {
+    background: #000;
+    background: rgba(0,0,0,.4);
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    color: #FFF;
+    font-size: 0.6rem;
+}
+.audio_close_btn {
+    position: absolute;
+    top: 28px;
+    right: 20px;
+    display: inline-block;
+    width: 36px;
+    height: 36px;
+    border-radius: 5px;
+    background: #FFF
+}
+
+
+.hero-talk {
+    background: #FFF;
+    height: 45%;
+    width: 16%;
+    position: absolute;
+    left: 10%;
+    top: 30%;
+}
+.hero-ear-1 {
+    background: #FFF;
+    width: 2%;
+    height: 24%;
+    position: absolute;
+    top: 4%;
+    left: 10%;
+}
+.hero-ear-2 {
+    background: #FFF;
+    width: 3%;
+    height: 12%;
+    position: absolute;
+    top: 16%;
+    left: 23%;
+}
+
+.hero-mouth {
+background: #000;
+    width: 8%;
+    height: 3%;
+    position: absolute;
+    top: 65%;
+    left: 14%;
+    animation: mouth 1s linear;
+
+}
+@keyframes mouth {
+    0%,20%,40%,60%,80%,100% {
+      height: 3%
+    }
+    10%,30%,50%,70%,90% {
+        height: 4%
+    }
+}
+
+.hero-eye-1 {
+background: #000;
+    width: 2%;
+    height: 16%;
+    position: absolute;
+    top: 39%;
+    left: 20%;
+}
+.hero-eye-2 {
+    background: #000;
+    width: 2%;
+    height: 16%;
+    position: absolute;
+    top: 39%;
+    left: 14%;
+}
+
+
+li {
+    display: inline-block;
+    width: 20px;
+    height: 200px;
+    list-style-type: none;
+    background: gray
+}
+
+.capsule {
+    position: relative;
+    width: 10vmin;
+    height: 10vmin
+}
+
+.capsule1 {
+    top: 0;
+    width: 10vmin;
+    height: 1vmin
+}
+
+.capsule1,.capsule2,.capsule3 {
+    position: absolute;
+    left: 0
+}
+
+.capsule2 {
+    bottom: 0;
+    width: 10vmin;
+    height: 1vmin
+}
+
+.capsule3 {
+    top: 0;
+    width: 1vmin;
+    height: 10vmin
+}
+
+.capsule4,.capsule5 {
+    position: absolute;
+    right: 0;
+    width: 1vmin;
+    height: 3vmin
+}
+
+.capsule4 {
+    top: 0
+}
+
+.capsule5 {
+    bottom: 0
+}
+
+.maze {
+    position: relative;
+    display: flex;
+    width: 480px;
+    height: 480px;
+    background: rgba(40,40,40,.74);
+    justify-content: center;
+    align-items: center
+}
+
+.maze-walls {
+    position: absolute;
+    width: 48vmin;
+    height: 48vmin
+}
+
+.wall {
+    position: absolute;
+
+}
+.error:hover {
+  display: block;
+}
+.wall:hover ~ .error {
+  display: block;
+}
+.wall-1 {
+      top: 0;
+    left: 0;
+    width: 45%;
+    height: 5%
+}
+
+.wall-2 {
+    top: 0;
+    right: 0;
+    width: 45%;
+    height: 5%;
+}
+
+.wall-3 {
+    left: 0;
+    height: 45%;
+    top: 0;
+    width: 5%;
+}
+
+.wall-4 {
+left:0;
+height:45%;
+bottom:0;
+width:5%;
+}
+
+.wall-5 {
+right: 0;
+    top: 0;
+    width: 5%;
+    height: 45%;
+}
+
+.wall-6 {
+bottom: 0;
+    right: 0;
+    height: 45%;
+    width: 5%;
+}
+
+.wall-7 {
+    bottom: 0;
+    left: 0;
+    height: 5%;
+    width: 100%;
+}
+
+.wall-8 {
+    width: 5%;
+    top: 5%;
+    height: 12%;
+    left: 55%;
+}
+
+.wall-9 {
+    bottom: 0;
+    left: 45%;
+    height: 74%;
+    width: 5%;
+    top: 0;
+
+}
+
+
+
+.wall-10 {
+width: 38%;
+    height: 5%;
+    top: 22%;
+    left: 50%;
+}
+
+.wall-11 {
+width: 10%;
+    height: 5%;
+    left: 5%;
+    top: 55%;
+
+}
+
+.wall-12 {
+height: 45%;
+    width: 5%;
+    left: 15%;
+    top: 15%;
+}
+.wall-13 {
+    width: 28%;
+    left: 60%;
+    height: 5%;
+    top: 12%;
+}
+.wall-14 {
+    top: 8%;
+    left: 59%;
+    height: 1%;
+    width: 40%;
+
+
+}
+.wall-15 {
+top: 70%;
+    left: 11%;
+    height: 5%;
+    width: 84%;
+}
+.wall-16 {
+top: 45%;
+    left: 0%;
+    height: 10%;
+    width: 5%;
+}
+
+.wall-17 {
+height: 19%;
+    top: 41%;
+    left: 34%;
+    width: 5%;
+}
+.wall-18 {
+height: 5%;
+    top: 59%;
+    left: 60%;
+    width: 35%;
+}
+.wall-19 {
+    height: 5%;
+    top: 55%;
+    left: 14%;
+    width: 14%;
+}
+.wall-20 {
+      height: 1%;
+    top: 2%;
+    left: 18%;
+    width: 24%;
+
+}
+.wall-21 {
+    height: 1.5rem;
+    top: 5%;
+    left: 30%;
+    width: 1.5rem;
+      transition: all 1s ease;
+              animation: 1s wall-21-ani-in linear infinite alternate;
+
+
+}
+@keyframes wall-21-ani-in{
+  0% {
+    top:0%;
+  }
+  to {
+    top:30%;
+  }
+
+}
+
+.wall-22 {
+    width: 1.5rem;
+    height: 1.5rem;
+    left: 56%;
+    top: 33%;
+          transition: all 1s linear;
+
+}
+@keyframes wall-22-ani-in{
+  0% {
+    top:30%;
+  }
+  to {
+    top:0%;
+  }
+
+}
+
+.wall-23 {
+    width: 1.5rem;
+    height: 1.5rem;
+    left: 88%;
+    top: 0%;
+          transition: all 1s linear;
+
+}
+.wall-24 {
+    width: 19%;
+    height: 5%;
+    left: 20%;
+    top: 15%;
+}
+.wall-25 {
+    width: 19%;
+    height: 5%;
+    left: 26%;
+    top: 25%;
+}
+.wall-26 {
+    height: 5%;
+    width: 19%;
+    left: 20%;
+    top: 36%;
+}
+.wall-27 {
+    height: 5%;
+    width: 30%;
+    left: 65%;
+    top: 40%;
+}
+
+.hidden-panel-1 {
+position: absolute;
+    width: 40%;
+    left: 5%;
+    height: 15%;
+    top: 5%;
+    background: none;
+
+}
+.hidden-panel-1:hover > .wall-21{
+        animation: 1s wall-21-ani-in linear infinite alternate;
+background:red;
+      transition: all 1s linear;
+
+}
+.hidden-panel-1:hover > .wall-22{
+        animation: 1s wall-22-ani-in linear infinite alternate;
+background:red;
+      transition: all 1s linear;
+
+}
+.hidden-panel-1:hover > .wall-23{
+        animation: 1s wall-21-ani-in linear infinite alternate;
+background:red;
+      transition: all 1s linear;
+
+}
+#music:checked~header .audio .audio_content {
+    transition: all 5s ease;
+    transform: translateY(-150%)
+}
+#music:checked~header .audio .audio_close_btn {
+      transition: all 1s ease;
+background:#000;
+}
+#music:not(:checked)~header .audio .audio_content {
+    transition: all 5s ease;
+}
+
+
+
+
+
+
+
+
+
+#coin1:checked,#coin2:checked,#coin3:checked,#coin4:checked {
+    counter-increment: coins1
+}
+
+#coin1:checked~main label[for=coin1],#coin2:checked~main label[for=coin2],#coin3:checked~main label[for=coin3],#coin4:checked~main label[for=coin4] {
+    top: -50%!important;
+    left: 100%!important;
+    visibility: hidden;
+    transition: top .5s ease-in,left .5s ease-in,opacity 0s .5s ease-in,visibility 0s .5s ease-in;
+    pointer-events: none;
+    opacity: 0
+}
+
+#event1-available:not(:checked)~#coin1:checked+#coin2:checked+#coin3:checked~.info>.events_wrap>.event1.unlock {
+    display: inline-block
+}
+
+#event1-available:checked~.info>.events_wrap>.event1.original {
+    display: inline-block
+}
+
+#event1-available:checked~.ach>.event-info-1 {
+    animation: 5s 1s unlock_character ease-out;
+    opacity: 1;
+    display: inline-block
+}
+
+#event1-available:checked~.info>div.event1.unlock,#event1:checked~main>.maze-blocker {
+    display: none
+}
+#coin4:checked ~ main > .maze > .wall-16 {
+    animation: 5s 1s first-door-unlocked ease-out forwards;
+}
+
+@keyframes first-door-unlocked {
+  0% {
+    transform: translateX(0);
+  }
+  to {transform: translateX(200%);}
+}
