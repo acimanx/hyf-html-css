@@ -88,7 +88,7 @@ footer p {
      justify-content: center 
 }
  .maze-blocker::before {
-content: "...";
+content: "";
  }
   .maze-blocker::after {
       content: "";
@@ -418,9 +418,9 @@ right: 0;
     height: 65%;
 }
  .wall-6 {
-    top: 75%;
+    top: 70%;
     right: 0;
-    height: 20%;
+    height: 25%;
     width: 5%;
 }
  .wall-7 {
@@ -875,8 +875,9 @@ label[for=automech1]{
  #event1-available:checked~header>.info>div.event1.unlock,#event1:checked~main>.maze-blocker {
      display: none 
 }
-
-
+#event1:checked~header>.info>.events_wrap>.event1.original {
+    opacity: .2;
+}
 
 
 
