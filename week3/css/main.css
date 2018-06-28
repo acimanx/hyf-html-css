@@ -190,8 +190,8 @@ img {
 .element-sidebar .heading {
     margin: 1ch 0;
     padding: 1ch 0;
-    border-top: 1px solid;
-    border-bottom: 1px solid
+    border-top: 1px solid #d4d4d4;
+    border-bottom: 1px solid #d4d4d4
 }
 
 [class^=element] {
