@@ -46,7 +46,8 @@ p {
 }
 
 main {
-    margin: 6ch 0 1ch;
+    padding: 3ch 0 1ch;
+    border-top: .2ch solid #ebebeb;
     flex-wrap: wrap;
     grid-area: main
 }
@@ -56,8 +57,8 @@ footer {
     margin-top: 2ch;
     margin-bottom: 15ch;
     padding-bottom: 3ch;
-    border-top: .5ch solid #d4d4d4;
-    border-bottom: .5ch solid #d4d4d4;
+    border-top: .5ch solid #ebebeb;
+    border-bottom: .5ch solid #ebebeb;
     grid-area: footer;
     justify-content: space-around
 }
@@ -99,7 +100,12 @@ footer {
 }
 
 .menu li {
-    margin: 0 1ch
+    padding: 0 .4rem;
+    border-right: .2ch solid #dfdfdf
+}
+
+.menu li:nth-last-child(1) {
+    border-right: 0
 }
 
 .author {
@@ -110,7 +116,7 @@ footer {
 }
 
 .intro-info p {
-    font-size: 2ch
+    font-size: 1rem
 }
 
 .image {
@@ -163,6 +169,10 @@ img {
     padding: 1ch 3ch;
     text-align: center;
     color: #fff
+}
+
+[class^=subscribe] a {
+    text-decoration: underline
 }
 
 [class^=subscribe]:hover {
