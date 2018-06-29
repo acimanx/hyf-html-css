@@ -4,14 +4,15 @@
     --base-highlight-color: #ca0000;
     --base-border-color: #d4d4d4;
     --p-size: 70%;
-    --p-padding: calc(var(--p-size)/30);
+    --p-padding: calc(var(--p-size)/20);
+    --h1-size: calc(var(--p-size) + 150%);
+    --h2-size: calc(var(--p-size) + 60%);
     --h3-size: calc(var(--p-size) + 30%);
     --h4-size: calc(var(--p-size) + 15%);
     --small-size: calc(var(--p-size) - 15%);
     --base-screen-medium: 200%;
     --base-screen-small: 400%;
-    --border: .1rem solid var(--base-border-color);
-    
+    --border: .1rem solid var(--base-border-color)
 }
 
 body,html {
@@ -61,6 +62,14 @@ h1,h2,h3,h4 {
     padding: 0
 }
 
+h1 {
+    font-size: var(--h1-size)
+}
+
+h2 {
+    font-size: var(--h2-size)
+}
+
 h3 {
     font-size: var(--h3-size)
 }
@@ -80,7 +89,7 @@ h4 {
 
 p {
     padding-top: var(--p-padding);
-    padding-bottom: var(--p-padding);
+    padding-bottom: var(--p-padding)
 }
 
 footer,main {
@@ -88,14 +97,14 @@ footer,main {
 }
 
 main {
+    padding-top: calc(var(--p-padding));
     flex-wrap: wrap;
-    padding: 3rem 0 1rem;
     grid-area: main
 }
 
 footer {
     margin-top: var(--p-padding);
-    margin-bottom: calc(var(--p-padding) * 5);
+    margin-bottom: calc(var(--p-padding)*5);
     padding: var(--p-padding) 0;
     grid-area: footer;
     justify-content: space-around
@@ -110,8 +119,8 @@ footer {
 }
 
 .column {
-    margin-right: 1rem;
-    margin-bottom: 2rem;
+    margin-right: var(--p-padding);
+    margin-bottom: var(--p-padding)*2;
     flex: 1 0 35%
 }
 
@@ -134,7 +143,7 @@ footer {
 }
 
 .element-standard {
-    margin-bottom: 1rem
+    margin-bottom: var(--p-padding)
 }
 
 .image,.menu li {
@@ -150,11 +159,15 @@ footer {
     border-right: 0
 }
 
-.author {
+.small {
     font-size: var(--small-size);
-    padding: .5rem 0;
+    padding: var(--p-padding) 0;
     text-transform: uppercase;
     color: var(--base-highlight-color)
+}
+
+.right {
+    text-align: right
 }
 
 .image {
@@ -169,6 +182,7 @@ footer {
 
 .element-headline .image {
     width: 100%;
+    margin-bottom: var(--p-padding);
     text-align: right;
     background: 0 0
 }
@@ -188,7 +202,7 @@ img {
 }
 
 .subscribe {
-    margin: 2rem 0
+    margin: var(--p-padding) 0
 }
 
 [class^=subscribe],[class^=subscribe] a {
@@ -206,8 +220,8 @@ img {
 }
 
 .element-sidebar .heading {
-    margin: 1rem 0;
-    padding: 1rem 0;
+    margin: var(--p-padding) 0;
+    padding: var(--p-padding) 0;
     border-top: var(--border);
     border-bottom: var(--border)
 }
