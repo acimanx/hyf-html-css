@@ -28,7 +28,7 @@ header {
     grid-area: header
 }
 
-.element-headline h3,h3 {
+.element-headline h3,h3,p {
     margin: 0
 }
 
@@ -36,16 +36,28 @@ footer,header,main {
     display: flex
 }
 
+h3 {
+    font-size: 1.5ch
+}
+
+p {
+    font-size: 1.2ch;
+    padding: 1ch 0
+}
+
 main {
-    font-size: 1.4ch;
+    margin: 6ch 0 1ch;
     flex-wrap: wrap;
     grid-area: main
 }
 
 footer {
-    font-size: 1ch;
+    font-size: 1.3ch;
     margin-top: 2ch;
+    margin-bottom: 15ch;
+    padding-bottom: 3ch;
     border-top: .5ch solid #d4d4d4;
+    border-bottom: .5ch solid #d4d4d4;
     grid-area: footer;
     justify-content: space-around
 }
@@ -70,7 +82,15 @@ footer {
     flex: 1 0 20%
 }
 
-.element-standard,.menu {
+.column:nth-child(3) p {
+    border-top: .2ch solid #d4d4d4
+}
+
+.column:nth-child(3) .article p {
+    border-top: 0
+}
+
+.element-standard {
     margin-bottom: 3ch
 }
 
@@ -83,10 +103,14 @@ footer {
 }
 
 .author {
-    font-size: 1ch;
+    font-size: .8ch;
     padding: 0 0 1ch;
     text-transform: uppercase;
     color: #ca0000
+}
+
+.intro-info p {
+    font-size: 2ch
 }
 
 .image {
@@ -110,16 +134,8 @@ footer {
     margin-top: 2ch
 }
 
-.element-headline p,.element-standard-middle p {
+.element-headline p {
     margin-top: 1ch
-}
-
-.element-standard-middle {
-    margin-bottom: 1ch
-}
-
-.element-standard-middle .image {
-    width: 25%
 }
 
 img {
@@ -136,15 +152,15 @@ img {
 }
 
 .subscribe-bottom {
-    height: 5ch
+    padding: 1ch 3ch
 }
 
 .subscribe {
-    height: 7ch;
     margin: 2ch 0
 }
 
 [class^=subscribe],[class^=subscribe] a {
+    padding: 1ch 3ch;
     text-align: center;
     color: #fff
 }
@@ -196,14 +212,6 @@ img {
     footer {
         font-size: 3ch
     }
-
-    [class^=element] {
-        margin-bottom: 0
-    }
-
-    .element-standard-middle .image {
-        width: 20%
-    }
 }
 
 @media only screen and (min-width:40.063em) and (max-width:64em) {
@@ -224,12 +232,8 @@ img {
         display: none
     }
 
-    header {
+    header,main {
         font-size: 4ch
-    }
-
-    main {
-        font-size: 3ch
     }
 
     footer {
